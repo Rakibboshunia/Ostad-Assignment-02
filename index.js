@@ -41,7 +41,6 @@ var server=http.createServer(function (req,res) {
         })
     }
 
-
 // Multer for file upload
     else if(req.method === 'POST' && req.url === '/success') {
         upload(req,res,(error)=>{
@@ -65,3 +64,4 @@ var port = process.env.port || 5500;
 server.listen(port, () => {
     console.log(`http://www.localhost:${port}`)
 })
+
