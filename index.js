@@ -7,33 +7,40 @@ var multer = require('multer');
 //Create HTTP server
 var server=http.createServer(function (req,res) {
 
-    if(req.url=="/") {
+    if(req.url=="/") 
+    {
         res.writeHead(200,{'Content-Type':'text/html'})
         res.write('<h1>This is About Page</h1>')
         res.end();
     }
 
-    else if(req.url=="/about") {
+    else if(req.url=="/about") 
+    {
         res.writeHead(200,{'Content-Type':'text/html'})
         res.write('<h1>This is About Page</h1>')
         res.end();
     }
 
-    else if(req.url=="/contact") {
+    else if(req.url=="/contact") 
+    {
         res.writeHead(200,{'Content-Type':'text/html'})
         res.write('<h1>This is Contact Page</h1>')
         res.end();
     }
 
 // File Write
-    else if(req.url="/"){
-        fs.writeFile('demo.txt','Hello World', function (error) {
-            if (error) {
+    else if(req.url="/")
+    {
+        fs.writeFile('demo.txt','Hello World', function (error) 
+                     {
+            if (error) 
+            {
                 res.writeHead(404, {'Content-Type': 'text/html'});
                 res.write('<h1>not found this text');
                 res.end();
             }
-            else {
+            else 
+            {
                 res.writeHead(200, {'Content-Type': 'text/html'});
                 res.write('<h1>file write success ... you can check folder');
                 res.end();
@@ -42,14 +49,16 @@ var server=http.createServer(function (req,res) {
     }
 
 // Multer for file upload
-    else if(req.method === 'POST' && req.url === '/success') {
+    else if(req.method === 'POST' && req.url === '/success') 
+    {
         upload(req,res,(error)=>{
             if(error) {
                 res.writeHead(404, {'Content-Type': 'text/html'});
                 res.write('<h1>upload file un success');
                 res.end();
             }
-            else {
+            else 
+            {
                 res.writeHead(200, {'Content-Type':'text/html'});
                 res.write('<h1>file upload success you can check folder');
                 res.end();
