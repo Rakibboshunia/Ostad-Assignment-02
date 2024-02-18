@@ -13,21 +13,18 @@ var server=http.createServer(function (req,res) {
         res.write('<h1>This is About Page</h1>')
         res.end();
     }
-
     else if(req.url=="/about") 
     {
         res.writeHead(200,{'Content-Type':'text/html'})
         res.write('<h1>This is About Page</h1>')
         res.end();
     }
-
     else if(req.url=="/contact") 
     {
         res.writeHead(200,{'Content-Type':'text/html'})
         res.write('<h1>This is Contact Page</h1>')
         res.end();
     }
-
 // File Write
     else if(req.url="/")
     {
@@ -38,7 +35,7 @@ var server=http.createServer(function (req,res) {
                 res.writeHead(404, {'Content-Type': 'text/html'});
                 res.write('<h1>not found this text');
                 res.end();
-            }
+            } 
             else 
             {
                 res.writeHead(200, {'Content-Type': 'text/html'});
@@ -67,10 +64,8 @@ var server=http.createServer(function (req,res) {
     }
 });
 
-
 // Server Create Port Method
 var port = process.env.port || 5500;
 server.listen(port, () => {
     console.log(`http://www.localhost:${port}`)
 })
-
